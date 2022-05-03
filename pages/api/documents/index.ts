@@ -56,7 +56,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     return res.json({ ok: true, key, secret });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ ok: false });
+    return res.status(500).json({ ok: false, error: err });
   }
 };
